@@ -1,4 +1,4 @@
-const { orderedFor, replaceMongoObjectIdWithString } = require("../lib/util");
+const { orderedFor, replaceMongoObjectIdWithString } = require("../../../util");
 var ObjectId = require("mongodb").ObjectID;
 
 module.exports = mPool => {
@@ -6,6 +6,7 @@ module.exports = mPool => {
   return {
     getAll() {
       return mPool
+        .db("usermanagement")
         .collection(collectionName)
         .find({})
         .toArray()
@@ -15,13 +16,13 @@ module.exports = mPool => {
         });
     },
     getByIds(ids) {
+      console.log("Call permissionGroups.getByIds");
       return mPool
+        .db("usermanagement")
         .collection(collectionName)
         .find({ _id: { $in: ids } })
         .toArray()
-        .then(rows => {
-          return orderedFor(rows, ids, "id", true);
-        });
+        .then(rows => orderedFor(rows, ids, "id", true));
     }
   };
 };

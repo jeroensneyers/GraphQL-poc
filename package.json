@@ -6,29 +6,42 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "node lib/index",
-    "dev": "nodemon --exec node lib/index.js",
-    "debug": "nodemon --inspect lib/index.js"
+    "start": "node ./src/express.js",
+    "dev": "nodemon --exec node ./src/express.js",
+    "debug": "nodemon --inspect ./src/express.js"
   },
   "keywords": [
     "graphql"
   ],
   "dependencies": {
-    "dataloader": "^1.2.0",
-    "express": "^4.14.0",
-    "express-graphql": "^0.5.3",
-    "graphql": "^0.6.0",
-    "humps": "^1.1.0",
-    "lodash": "^4.13.1",
-    "mongodb": "^2.1.18"
+    "apollo-server": "^2.2.6",
+    "apollo-server-express": "^2.2.6",
+    "asyncawait": "^1.0.7",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.5",
+    "dataloader": "^1.4.0",
+    "expect-more-jest": "^2.3.0",
+    "express": "^4.16.4",
+    "express-asyncify": "^1.0.0",
+    "faker": "^4.1.0",
+    "graphql": "^14.0.2",
+    "graphql-type-json": "^0.2.1",
+    "http-status-codes": "^1.3.0",
+    "humps": "^2.0.1",
+    "intl": "^1.2.5",
+    "jest": "^23.6.0",
+    "mongodb": "^3.1.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.7",
+    "schema-inspector": "^1.6.8",
+    "showdown": "^1.9.0",
+    "sort-on": "^3.0.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "eslint": "^5.10.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "nodemon": "^1.9.2"
+    "jest-matcher-utils": "^23.6.0",
+    "jest-watch-typeahead": "^0.2.0",
+    "prettier": "^1.5.3",
+    "supertest": "^3.3.0"
   }
 }
